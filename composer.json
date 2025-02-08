@@ -1,43 +1,43 @@
 {
-    "name": "myclabs/deep-copy",
-    "description": "Create deep copies (clones) of your objects",
-    "license": "MIT",
+    "name": "nikic/php-parser",
     "type": "library",
+    "description": "A PHP parser written in PHP",
     "keywords": [
-        "clone",
-        "copy",
-        "duplicate",
-        "object",
-        "object graph"
+        "php",
+        "parser"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Nikita Popov"
+        }
     ],
     "require": {
-        "php": "^7.1 || ^8.0"
+        "php": ">=7.4",
+        "ext-tokenizer": "*",
+        "ext-json": "*",
+        "ext-ctype": "*"
     },
     "require-dev": {
-        "doctrine/collections": "^1.6.8",
-        "doctrine/common": "^2.13.3 || ^3.2.2",
-        "phpspec/prophecy": "^1.10",
-        "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
+        "phpunit/phpunit": "^9.0",
+        "ircmaxell/php-yacc": "^0.0.7"
     },
-    "conflict": {
-        "doctrine/collections": "<1.6.8",
-        "doctrine/common": "<2.13.3 || >=3 <3.2.2"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.0-dev"
+        }
     },
     "autoload": {
         "psr-4": {
-            "DeepCopy\\": "src/DeepCopy/"
-        },
-        "files": [
-            "src/DeepCopy/deep_copy.php"
-        ]
+            "PhpParser\\": "lib/PhpParser"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "DeepCopyTest\\": "tests/DeepCopyTest/",
-            "DeepCopy\\": "fixtures/"
+            "PhpParser\\": "test/PhpParser/"
         }
     },
-    "config": {
-        "sort-packages": true
-    }
+    "bin": [
+        "bin/php-parse"
+    ]
 }
